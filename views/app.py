@@ -1,11 +1,12 @@
 
 from flask import Flask, render_template
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
 
 
-client = MongoClient("mongodb+srv://h4nine:05qm7ymXeUMSAffL@moodify.vyyoi2k.mongodb.net/")
+client = MongoClient(os.getenv("MONGO_URI"))
 db = client["Moodify"] 
 collection = db["emotions"]
 
