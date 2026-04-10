@@ -1,17 +1,39 @@
 import os
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from google import genai
-from google.genai import types  # Import indispensable pour structurer les données
+from google.genai import types
 from dotenv import load_dotenv
+from pymongo import MongoClient
 
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+ai_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
+
+db_client = MongoClient(os.getenv("MONGO_URI"))
+db = db_client["Moodify"] 
+collection = db["emotions"]
+
+
+@app.route('/')
+def index():
+    # Récupération des émotions enregistrées
+    emotions_list = list(collection.find()) 
+    return render_template('index.html', emotions=emotions_list)
+
+@app.route('/additional')
+def additional_page():
+    return render_template('additional.html')
+
+@app.route('/debug-mode')
+def debug_mode():
+    return jsonify({"message": "You've discovered debug mode!"})
 
 @app.route('/analyse-emotion', methods=['POST'])
 def analyze_emotion():
@@ -19,8 +41,11 @@ def analyze_emotion():
         return jsonify({"error": "Aucune image reçue"}), 400
     
     file = request.files['image']
+    if file.filename.endswith(".png"):
+        return jsonify({"easter_egg": "You uploaded a PNG!"})
+
     img_bytes = file.read()
-    mime_type = file.content_type  # On récupère le type (image/jpeg, etc.)
+    mime_type = file.content_type
 
     try:
         prompt = (
@@ -30,25 +55,30 @@ def analyze_emotion():
             "'analysis' (une description simple + quelques mots d'encouragement)."
         )
 
-        # On emballe l'image dans un objet Part.from_bytes
         image_part = types.Part.from_bytes(
             data=img_bytes,
             mime_type=mime_type
         )
 
-        response = client.models.generate_content(
-            model="gemini-3.1-flash-lite-preview",
-            contents=[prompt, image_part] # On envoie le prompt et la Part
+        
+        response = ai_client.models.generate_content(
+            model="gemini-2.5-flash", 
+            contents=[prompt, image_part]
         )
 
-        # Nettoyage du texte (Gemini entoure souvent le JSON de ```json ... ```)
+        # Nettoyage du JSON
         raw_text = response.text.replace('```json', '').replace('```', '').strip()
         
         return jsonify(json.loads(raw_text))
 
     except Exception as e:
-        print(f"Erreur détaillée: {e}")
-        return jsonify({"error": str(e)}), 500
+        
+        return jsonify("error"), 500
+
+@app.route('/playlist')
+def playlist():
+        emotions_list = list(collection.find()) 
+        return render_template('playlist.html', emotions=emotions_list)
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

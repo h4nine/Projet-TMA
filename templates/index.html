@@ -29,10 +29,21 @@
         text-transform: capitalize;
         color: #333;
       }
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #badcff;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <h1 style="text-align: center">Mes Émotions (depuis MongoDB)</h1>
+    <h1 style="text-align: center">Mes Émotions</h1>
     <div class="container">
       {% for item in emotions %}
       <div class="card">
@@ -42,5 +53,22 @@
       </div>
       {% endfor %}
     </div>
+    <button onclick="window.location.href = '/additional'">
+      Autre? scannez la
+    </button>
+    <button
+      onclick="alert('You found the hidden button!')"
+      style="display: none"
+      id="hiddenButton"
+    >
+      click me
+    </button>
+    <script>
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "h") {
+          document.getElementById("hiddenButton").style.display = "block";
+        }
+      });
+    </script>
   </body>
 </html>

@@ -41,7 +41,7 @@ async function sendAnalysis() {
   formData.append("image", file);
 
   try {
-    const response = await fetch("http://localhost:5000/analyse-emotion", {
+    const response = await fetch("http://127.0.0.1:5000/analyse-emotion", {
       method: "POST",
       body: formData,
     });
@@ -56,7 +56,11 @@ async function sendAnalysis() {
     updateUIMessage(geminiText, data.analysis);
   } catch (error) {
     console.error("Error:", error);
-    updateUIMessage(geminiText, "Unable to connect to the server.", true);
+    updateUIMessage(
+      geminiText,
+      "erreur : Encore ? Je fais grève, reviens demain.",
+      true,
+    );
   } finally {
     // Hide loader and re-enable button
     loader.style.display = "none";
