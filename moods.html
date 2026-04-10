@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodify - Choix du mood</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/moods.css" />
+</head>
+<body class="moods-page">
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🪼</span>
+      <span>Moodify</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="moods.html" class="active">Moods</a>
+      <a href="about.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="moods-main">
+    <section class="moods-header">
+      <p class="badge">Choisis ton émotion</p>
+      <h1>Pick your mood</h1>
+      <p>
+        Clique sur une carte pour générer ton univers personnalisé.
+      </p>
+    </section>
+
+    <section class="moods-grid">
+      <div class="mood-card" data-mood="dead-inside">
+        <div class="mood-emoji">💀</div>
+        <h3>dead inside</h3>
+        <p>I’m fine (I’m not)</p>
+      </div>
+
+      <div class="mood-card" data-mood="main-character">
+        <div class="mood-emoji">🌈</div>
+        <h3>main character</h3>
+        <p>It’s my movie</p>
+      </div>
+
+      <div class="mood-card" data-mood="overthinking">
+        <div class="mood-emoji">🧠</div>
+        <h3>overthinking</h3>
+        <p>3h du matin</p>
+      </div>
+
+      <div class="mood-card" data-mood="boss-mode">
+        <div class="mood-emoji">🔥</div>
+        <h3>boss mode</h3>
+        <p>Let’s get it</p>
+      </div>
+
+      <div class="mood-card" data-mood="no-energy">
+        <div class="mood-emoji">😴</div>
+        <h3>no energy</h3>
+        <p>Just surviving</p>
+      </div>
+
+      <div class="mood-card" data-mood="heartbreak">
+        <div class="mood-emoji">💔</div>
+        <h3>heartbreak era</h3>
+        <p>We don’t talk</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Choisis ton mood et laisse Moodify faire le reste.</p>
+  </footer>
+
+  <script src="js/moods.js"></script>
+</body>
+</html>

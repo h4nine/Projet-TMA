@@ -1,0 +1,58 @@
+.about-page {
+  background:
+    radial-gradient(circle at top left, rgba(91,140,255,0.16), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(155,92,255,0.12), transparent 22%),
+    #0b1020;
+}
+
+.about-main {
+  padding: 50px 8% 80px;
+}
+
+.about-hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.about-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.about-hero p {
+  color: #c7d0ee;
+  line-height: 1.8;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.about-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.about-card h2 {
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  color: #c7d0ee;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 2.3rem;
+  }
+}

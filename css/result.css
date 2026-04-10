@@ -1,0 +1,173 @@
+.result-page {
+  padding: 50px 8% 70px;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.result-header h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.result-header p {
+  color: #ccd4f0;
+  font-size: 1.05rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.result-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 24px;
+  min-height: 180px;
+}
+
+.result-card h2 {
+  margin-bottom: 18px;
+  font-size: 1.2rem;
+}
+
+.big-card {
+  grid-column: span 2;
+}
+
+.mood-main {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mood-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  font-size: 2.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.08);
+}
+
+#mood-name {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+#mood-tagline {
+  color: #cfd8f6;
+}
+
+blockquote {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #f7f8ff;
+  font-style: italic;
+}
+
+.playlist-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.playlist-list li {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  color: #d8def7;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.aesthetic-box {
+  height: 140px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.result-actions {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.theme-dead-inside {
+  background:
+    radial-gradient(circle at top left, rgba(120, 130, 160, 0.18), transparent 25%),
+    #0d1119;
+}
+
+.theme-main-character {
+  background:
+    radial-gradient(circle at top left, rgba(255, 175, 204, 0.22), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(168, 230, 255, 0.18), transparent 25%),
+    #101224;
+}
+
+.theme-overthinking {
+  background:
+    radial-gradient(circle at center, rgba(98, 73, 255, 0.16), transparent 28%),
+    #0a1021;
+}
+
+.theme-boss-mode {
+  background:
+    radial-gradient(circle at top right, rgba(255, 123, 0, 0.22), transparent 25%),
+    #111018;
+}
+
+.theme-no-energy {
+  background:
+    radial-gradient(circle at bottom left, rgba(255, 206, 173, 0.16), transparent 25%),
+    #151823;
+}
+
+.theme-heartbreak {
+  background:
+    radial-gradient(circle at top center, rgba(255, 69, 105, 0.16), transparent 25%),
+    #120d18;
+}
+
+@media (max-width: 850px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .big-card {
+    grid-column: span 1;
+  }
+
+  .result-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .mood-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

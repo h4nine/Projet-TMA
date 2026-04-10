@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodify - Résultat personnalisé</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/result.css" />
+</head>
+<body id="result-body">
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🪼</span>
+      <span>Moodify</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="moods.html">Moods</a>
+      <a href="about.html">À propos</a>
+    </nav>
+  </header>
+
+  <main class="result-page">
+    <section class="result-header">
+      <p class="badge">Your vibe is ready</p>
+      <h1 id="mood-title">Mood title</h1>
+      <p id="mood-description">Description du mood</p>
+    </section>
+
+    <section class="result-grid">
+      <div class="result-card big-card">
+        <h2>Ton mood</h2>
+        <div class="mood-main">
+          <div class="mood-icon" id="mood-emoji">✨</div>
+          <div>
+            <h3 id="mood-name">Mood</h3>
+            <p id="mood-tagline">Tagline</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-card">
+        <h2>Quote of the day</h2>
+        <blockquote id="mood-quote">“Citation ici”</blockquote>
+      </div>
+
+      <div class="result-card">
+        <h2>Playlist</h2>
+        <ul id="playlist-list" class="playlist-list"></ul>
+      </div>
+
+      <div class="result-card">
+        <h2>Vibe</h2>
+        <div class="tags" id="mood-tags"></div>
+      </div>
+
+      <div class="result-card">
+        <h2>Ton univers</h2>
+        <div class="aesthetic-box" id="aesthetic-box"></div>
+      </div>
+    </section>
+
+    <section class="result-actions">
+      <a href="moods.html" class="btn btn-primary">Choisir un autre mood</a>
+      <button class="btn btn-secondary" id="randomMoodBtn">Mood aléatoire</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Chaque mood crée un univers différent.</p>
+  </footer>
+
+  <script src="js/result.js"></script>
+</body>
+</html>
