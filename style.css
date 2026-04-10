@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f14, #1a1a2e);
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* ---------- GRID EMOTIONS ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+
+  /* ALIGNEMENT */
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-4px);
+}
+
+/* ---------- EMOJIS (cards index) ---------- */
+.emoji-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* ---------- PAGE SIMPLE (hero emoji) ---------- */
+.mood-hero {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.mood-hero img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+/* ---------- BUTTONS ---------- */
+.button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 14px;
+  background: #8ecae6;
+  color: #0f172a;
+  text-align: center;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+}
+
+/* ---------- MOOD BOX ---------- */
+.mood-box {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* ON SUPPRIME width:100% GLOBAL */
+img {
+  border-radius: 16px;
+}
+
+small {
+  opacity: 0.7;
+}
